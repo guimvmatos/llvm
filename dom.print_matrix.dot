@@ -1,0 +1,21 @@
+digraph "Dominator tree for 'print_matrix' function" {
+	label="Dominator tree for 'print_matrix' function";
+
+	Node0x55d00145ed60 [shape=record,label="{%1:\l  %2 = alloca [3 x i32]*, align 8\l  %3 = alloca i32, align 4\l  %4 = alloca i32, align 4\l  store [3 x i32]* %0, [3 x i32]** %2, align 8\l  store i32 0, i32* %3, align 4\l  br label %5\l}"];
+	Node0x55d00145ed60 -> Node0x55d00145baa0;
+	Node0x55d00145baa0 [shape=record,label="{%5:\l5:                                                \l  %6 = load i32, i32* %3, align 4\l  %7 = icmp slt i32 %6, 3\l  br i1 %7, label %8, label %30\l}"];
+	Node0x55d00145baa0 -> Node0x55d00145bb00;
+	Node0x55d00145baa0 -> Node0x55d00145bd40;
+	Node0x55d00145bb00 [shape=record,label="{%8:\l8:                                                \l  store i32 0, i32* %4, align 4\l  br label %9\l}"];
+	Node0x55d00145bb00 -> Node0x55d00145bb60;
+	Node0x55d00145bb60 [shape=record,label="{%9:\l9:                                                \l  %10 = load i32, i32* %4, align 4\l  %11 = icmp slt i32 %10, 3\l  br i1 %11, label %12, label %25\l}"];
+	Node0x55d00145bb60 -> Node0x55d00145bbc0;
+	Node0x55d00145bb60 -> Node0x55d00145bc80;
+	Node0x55d00145bbc0 [shape=record,label="{%12:\l12:                                               \l  %13 = load [3 x i32]*, [3 x i32]** %2, align 8\l  %14 = load i32, i32* %3, align 4\l  %15 = sext i32 %14 to i64\l  %16 = getelementptr inbounds [3 x i32], [3 x i32]* %13, i64 %15\l  %17 = load i32, i32* %4, align 4\l  %18 = sext i32 %17 to i64\l  %19 = getelementptr inbounds [3 x i32], [3 x i32]* %16, i64 0, i64 %18\l  %20 = load i32, i32* %19, align 4\l  %21 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([4 x\l... i8], [4 x i8]* @.str, i64 0, i64 0), i32 noundef %20)\l  br label %22\l}"];
+	Node0x55d00145bbc0 -> Node0x55d00145bc20;
+	Node0x55d00145bc20 [shape=record,label="{%22:\l22:                                               \l  %23 = load i32, i32* %4, align 4\l  %24 = add nsw i32 %23, 1\l  store i32 %24, i32* %4, align 4\l  br label %9, !llvm.loop !6\l}"];
+	Node0x55d00145bc80 [shape=record,label="{%25:\l25:                                               \l  %26 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([2 x\l... i8], [2 x i8]* @.str.1, i64 0, i64 0))\l  br label %27\l}"];
+	Node0x55d00145bc80 -> Node0x55d00145bce0;
+	Node0x55d00145bce0 [shape=record,label="{%27:\l27:                                               \l  %28 = load i32, i32* %3, align 4\l  %29 = add nsw i32 %28, 1\l  store i32 %29, i32* %3, align 4\l  br label %5, !llvm.loop !8\l}"];
+	Node0x55d00145bd40 [shape=record,label="{%30:\l30:                                               \l  ret void\l}"];
+}

@@ -1,0 +1,280 @@
+	.text
+	.syntax unified
+	.eabi_attribute	67, "2.09"	@ Tag_conformance
+	.eabi_attribute	6, 1	@ Tag_CPU_arch
+	.eabi_attribute	8, 1	@ Tag_ARM_ISA_use
+	.eabi_attribute	34, 1	@ Tag_CPU_unaligned_access
+	.eabi_attribute	17, 1	@ Tag_ABI_PCS_GOT_use
+	.eabi_attribute	20, 1	@ Tag_ABI_FP_denormal
+	.eabi_attribute	21, 1	@ Tag_ABI_FP_exceptions
+	.eabi_attribute	23, 3	@ Tag_ABI_FP_number_model
+	.eabi_attribute	24, 1	@ Tag_ABI_align_needed
+	.eabi_attribute	25, 1	@ Tag_ABI_align_preserved
+	.eabi_attribute	38, 1	@ Tag_ABI_FP_16bit_format
+	.eabi_attribute	18, 4	@ Tag_ABI_PCS_wchar_t
+	.eabi_attribute	14, 0	@ Tag_ABI_PCS_R9_use
+	.file	"matrizes.c"
+	.globl	matrix_multiply                 @ -- Begin function matrix_multiply
+	.p2align	2
+	.type	matrix_multiply,%function
+	.code	32                              @ @matrix_multiply
+matrix_multiply:
+	.fnstart
+@ %bb.0:
+	push	{r4, r5, r11, lr}
+	add	r11, sp, #8
+	sub	sp, sp, #40
+	mov	r12, #0
+	str	r1, [sp, #24]
+	str	r0, [r11, #-16]
+	str	r2, [sp, #16]
+	str	r12, [sp, #12]
+	b	.LBB0_2
+.LBB0_1:                                @   in Loop: Header=BB0_2 Depth=1
+	ldr	r0, [sp, #12]
+	add	r0, r0, #1
+	str	r0, [sp, #12]
+.LBB0_2:                                @ =>This Loop Header: Depth=1
+                                        @     Child Loop BB0_5 Depth 2
+                                        @       Child Loop BB0_7 Depth 3
+	ldr	r1, [sp, #12]
+	cmp	r1, #2
+	bgt	.LBB0_9
+@ %bb.3:                                @   in Loop: Header=BB0_2 Depth=1
+	str	r12, [sp, #8]
+	b	.LBB0_5
+.LBB0_4:                                @   in Loop: Header=BB0_5 Depth=2
+	ldr	r0, [sp, #8]
+	add	r0, r0, #1
+	str	r0, [sp, #8]
+.LBB0_5:                                @   Parent Loop BB0_2 Depth=1
+                                        @ =>  This Loop Header: Depth=2
+                                        @       Child Loop BB0_7 Depth 3
+	ldr	r1, [sp, #8]
+	cmp	r1, #2
+	bgt	.LBB0_1
+@ %bb.6:                                @   in Loop: Header=BB0_5 Depth=2
+	ldr	r1, [sp, #12]
+	ldr	r2, [sp, #16]
+	str	r12, [sp, #4]
+	add	r1, r1, r1, lsl #1
+	add	r1, r2, r1, lsl #2
+	ldr	r2, [sp, #8]
+	str	r12, [r1, r2, lsl #2]
+.LBB0_7:                                @   Parent Loop BB0_2 Depth=1
+                                        @     Parent Loop BB0_5 Depth=2
+                                        @ =>    This Inner Loop Header: Depth=3
+	ldr	r1, [sp, #4]
+	cmp	r1, #2
+	bgt	.LBB0_4
+@ %bb.8:                                @   in Loop: Header=BB0_7 Depth=3
+	ldr	r0, [sp, #4]
+	ldr	r5, [sp, #24]
+	ldr	r1, [sp, #12]
+	ldr	r2, [sp, #16]
+	ldr	r3, [sp, #8]
+	add	r4, r0, r0, lsl #1
+	add	r1, r1, r1, lsl #1
+	add	r4, r5, r4, lsl #2
+	ldr	r5, [r11, #-16]
+	add	r2, r2, r1, lsl #2
+	ldr	lr, [r2, r3, lsl #2]
+	ldr	r4, [r4, r3, lsl #2]
+	add	r1, r5, r1, lsl #2
+	ldr	r1, [r1, r0, lsl #2]
+	add	r0, r0, #1
+	str	r0, [sp, #4]
+	mla	r5, r1, r4, lr
+	str	r5, [r2, r3, lsl #2]
+	b	.LBB0_7
+.LBB0_9:
+	sub	sp, r11, #8
+	pop	{r4, r5, r11, lr}
+	mov	pc, lr
+.Lfunc_end0:
+	.size	matrix_multiply, .Lfunc_end0-matrix_multiply
+	.fnend
+                                        @ -- End function
+	.globl	print_matrix                    @ -- Begin function print_matrix
+	.p2align	2
+	.type	print_matrix,%function
+	.code	32                              @ @print_matrix
+print_matrix:
+	.fnstart
+@ %bb.0:
+	push	{r4, r5, r6, r10, r11, lr}
+	add	r11, sp, #16
+	sub	sp, sp, #16
+	ldr	r4, .LCPI1_1
+	ldr	r5, .LCPI1_0
+	mov	r6, #0
+	str	r0, [sp, #8]
+	str	r6, [sp, #4]
+	b	.LBB1_2
+.LBB1_1:                                @   in Loop: Header=BB1_2 Depth=1
+	mov	r0, r5
+	bl	printf
+	ldr	r0, [sp, #4]
+	add	r0, r0, #1
+	str	r0, [sp, #4]
+.LBB1_2:                                @ =>This Loop Header: Depth=1
+                                        @     Child Loop BB1_4 Depth 2
+	ldr	r0, [sp, #4]
+	cmp	r0, #2
+	bgt	.LBB1_6
+@ %bb.3:                                @   in Loop: Header=BB1_2 Depth=1
+	str	r6, [sp]
+.LBB1_4:                                @   Parent Loop BB1_2 Depth=1
+                                        @ =>  This Inner Loop Header: Depth=2
+	ldr	r0, [sp]
+	cmp	r0, #2
+	bgt	.LBB1_1
+@ %bb.5:                                @   in Loop: Header=BB1_4 Depth=2
+	ldr	r0, [sp, #4]
+	ldr	r1, [sp, #8]
+	add	r0, r0, r0, lsl #1
+	add	r0, r1, r0, lsl #2
+	ldr	r1, [sp]
+	ldr	r1, [r0, r1, lsl #2]
+	mov	r0, r4
+	bl	printf
+	ldr	r0, [sp]
+	add	r0, r0, #1
+	str	r0, [sp]
+	b	.LBB1_4
+.LBB1_6:
+	sub	sp, r11, #16
+	pop	{r4, r5, r6, r10, r11, lr}
+	mov	pc, lr
+	.p2align	2
+@ %bb.7:
+.LCPI1_0:
+	.long	.L.str.1
+.LCPI1_1:
+	.long	.L.str
+.Lfunc_end1:
+	.size	print_matrix, .Lfunc_end1-print_matrix
+	.fnend
+                                        @ -- End function
+	.globl	main                            @ -- Begin function main
+	.p2align	2
+	.type	main,%function
+	.code	32                              @ @main
+main:
+	.fnstart
+@ %bb.0:
+	push	{r4, r5, r6, r7, r8, r10, r11, lr}
+	add	r11, sp, #24
+	sub	sp, sp, #144
+	bic	sp, sp, #15
+	mov	r0, #0
+	add	r7, sp, #96
+	add	r8, sp, #48
+	str	r0, [sp, #140]
+	ldr	r0, .LCPI2_0
+	mov	r1, r7
+	ldm	r0!, {r2, r3, r4, r5}
+	stm	r1!, {r2, r3, r4, r5}
+	ldm	r0, {r2, r3, r4, r5, r6}
+	ldr	r0, .LCPI2_1
+	stm	r1, {r2, r3, r4, r5, r6}
+	mov	r1, r8
+	ldm	r0!, {r2, r3, r4, r6}
+	stm	r1!, {r2, r3, r4, r6}
+	ldm	r0, {r2, r3, r4, r5, r6}
+	mov	r0, r7
+	stm	r1, {r2, r3, r4, r5, r6}
+	mov	r4, sp
+	mov	r1, r8
+	mov	r2, r4
+	bl	matrix_multiply
+	ldr	r0, .LCPI2_2
+	bl	printf
+	mov	r0, r7
+	bl	print_matrix
+	ldr	r0, .LCPI2_3
+	bl	printf
+	mov	r0, r8
+	bl	print_matrix
+	ldr	r0, .LCPI2_4
+	bl	printf
+	mov	r0, r4
+	bl	print_matrix
+	mov	r0, #0
+	sub	sp, r11, #24
+	pop	{r4, r5, r6, r7, r8, r10, r11, lr}
+	mov	pc, lr
+	.p2align	2
+@ %bb.1:
+.LCPI2_0:
+	.long	.L__const.main.A
+.LCPI2_1:
+	.long	.L__const.main.B
+.LCPI2_2:
+	.long	.L.str.2
+.LCPI2_3:
+	.long	.L.str.3
+.LCPI2_4:
+	.long	.L.str.4
+.Lfunc_end2:
+	.size	main, .Lfunc_end2-main
+	.fnend
+                                        @ -- End function
+	.type	.L.str,%object                  @ @.str
+	.section	.rodata.str1.1,"aMS",%progbits,1
+.L.str:
+	.asciz	"%d "
+	.size	.L.str, 4
+
+	.type	.L.str.1,%object                @ @.str.1
+.L.str.1:
+	.asciz	"\n"
+	.size	.L.str.1, 2
+
+	.type	.L__const.main.A,%object        @ @__const.main.A
+	.section	.rodata,"a",%progbits
+	.p2align	4
+.L__const.main.A:
+	.long	1                               @ 0x1
+	.long	2                               @ 0x2
+	.long	3                               @ 0x3
+	.long	4                               @ 0x4
+	.long	5                               @ 0x5
+	.long	6                               @ 0x6
+	.long	7                               @ 0x7
+	.long	8                               @ 0x8
+	.long	9                               @ 0x9
+	.size	.L__const.main.A, 36
+
+	.type	.L__const.main.B,%object        @ @__const.main.B
+	.p2align	4
+.L__const.main.B:
+	.long	9                               @ 0x9
+	.long	8                               @ 0x8
+	.long	7                               @ 0x7
+	.long	6                               @ 0x6
+	.long	5                               @ 0x5
+	.long	4                               @ 0x4
+	.long	3                               @ 0x3
+	.long	2                               @ 0x2
+	.long	1                               @ 0x1
+	.size	.L__const.main.B, 36
+
+	.type	.L.str.2,%object                @ @.str.2
+	.section	.rodata.str1.1,"aMS",%progbits,1
+.L.str.2:
+	.asciz	"A:\n"
+	.size	.L.str.2, 4
+
+	.type	.L.str.3,%object                @ @.str.3
+.L.str.3:
+	.asciz	"B:\n"
+	.size	.L.str.3, 4
+
+	.type	.L.str.4,%object                @ @.str.4
+.L.str.4:
+	.asciz	"C = A*B:\n"
+	.size	.L.str.4, 10
+
+	.ident	"Debian clang version 14.0.6"
+	.section	".note.GNU-stack","",%progbits

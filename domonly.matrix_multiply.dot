@@ -1,0 +1,29 @@
+digraph "Dominator tree for 'matrix_multiply' function" {
+	label="Dominator tree for 'matrix_multiply' function";
+
+	Node0x55ab0ffb3be0 [shape=record,label="{%3}"];
+	Node0x55ab0ffb3be0 -> Node0x55ab0ffbc350;
+	Node0x55ab0ffbc350 [shape=record,label="{%10}"];
+	Node0x55ab0ffbc350 -> Node0x55ab0ffbe900;
+	Node0x55ab0ffbc350 -> Node0x55ab0ffc4730;
+	Node0x55ab0ffbe900 [shape=record,label="{%13}"];
+	Node0x55ab0ffbe900 -> Node0x55ab0ffaff00;
+	Node0x55ab0ffaff00 [shape=record,label="{%14}"];
+	Node0x55ab0ffaff00 -> Node0x55ab0ffafe40;
+	Node0x55ab0ffaff00 -> Node0x55ab0ffc4670;
+	Node0x55ab0ffafe40 [shape=record,label="{%17}"];
+	Node0x55ab0ffafe40 -> Node0x55ab0ffaff60;
+	Node0x55ab0ffaff60 [shape=record,label="{%25}"];
+	Node0x55ab0ffaff60 -> Node0x55ab0ffbe6c0;
+	Node0x55ab0ffaff60 -> Node0x55ab0ffafd80;
+	Node0x55ab0ffbe6c0 [shape=record,label="{%28}"];
+	Node0x55ab0ffbe6c0 -> Node0x55ab0ffaffc0;
+	Node0x55ab0ffaffc0 [shape=record,label="{%55}"];
+	Node0x55ab0ffafd80 [shape=record,label="{%58}"];
+	Node0x55ab0ffafd80 -> Node0x55ab0ffafde0;
+	Node0x55ab0ffafde0 [shape=record,label="{%59}"];
+	Node0x55ab0ffc4670 [shape=record,label="{%62}"];
+	Node0x55ab0ffc4670 -> Node0x55ab0ffc46d0;
+	Node0x55ab0ffc46d0 [shape=record,label="{%63}"];
+	Node0x55ab0ffc4730 [shape=record,label="{%66}"];
+}

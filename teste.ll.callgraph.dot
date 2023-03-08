@@ -1,0 +1,13 @@
+digraph "Call graph: teste.ll" {
+	label="Call graph: teste.ll";
+
+	Node0x564ef918be20 [shape=record,label="{matrix_multiply}"];
+	Node0x564ef918bf40 [shape=record,label="{print_matrix}"];
+	Node0x564ef918bf40 -> Node0x564ef918bfc0;
+	Node0x564ef91a0150 [shape=record,label="{main}"];
+	Node0x564ef91a0150 -> Node0x564ef918be20;
+	Node0x564ef91a0150 -> Node0x564ef918bfc0;
+	Node0x564ef91a0150 -> Node0x564ef918bf40;
+	Node0x564ef918bfc0 [shape=record,label="{printf}"];
+	Node0x564ef91a0400 [shape=record,label="{llvm.memcpy.p0i8.p0i8.i64}"];
+}

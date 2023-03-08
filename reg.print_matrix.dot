@@ -1,0 +1,48 @@
+digraph "Region Graph for 'print_matrix' function" {
+	label="Region Graph for 'print_matrix' function";
+
+	Node0x55cb34dc3a30 [shape=record,label="{%1}"];
+	Node0x55cb34dc3a30 -> Node0x55cb34ddf460;
+	Node0x55cb34ddf460 [shape=record,label="{%5}"];
+	Node0x55cb34ddf460 -> Node0x55cb34ddf4c0;
+	Node0x55cb34ddf460 -> Node0x55cb34ddf930;
+	Node0x55cb34ddf4c0 [shape=record,label="{%8}"];
+	Node0x55cb34ddf4c0 -> Node0x55cb34ddf990;
+	Node0x55cb34ddf990 [shape=record,label="{%9}"];
+	Node0x55cb34ddf990 -> Node0x55cb34dc5430;
+	Node0x55cb34ddf990 -> Node0x55cb34dc6d90;
+	Node0x55cb34dc5430 [shape=record,label="{%12}"];
+	Node0x55cb34dc5430 -> Node0x55cb34dbccd0;
+	Node0x55cb34dbccd0 [shape=record,label="{%22}"];
+	Node0x55cb34dbccd0 -> Node0x55cb34ddf990[constraint=false];
+	Node0x55cb34dc6d90 [shape=record,label="{%25}"];
+	Node0x55cb34dc6d90 -> Node0x55cb34dc5920;
+	Node0x55cb34dc5920 [shape=record,label="{%27}"];
+	Node0x55cb34dc5920 -> Node0x55cb34ddf460[constraint=false];
+	Node0x55cb34ddf930 [shape=record,label="{%30}"];
+	colorscheme = "paired12"
+        subgraph cluster_0x55cb34dc7960 {
+          label = "";
+          style = filled;
+          color = 1
+          subgraph cluster_0x55cb34dc7740 {
+            label = "";
+            style = filled;
+            color = 3
+            subgraph cluster_0x55cb34dc7600 {
+              label = "";
+              style = filled;
+              color = 5
+              Node0x55cb34ddf990;
+              Node0x55cb34dc5430;
+              Node0x55cb34dbccd0;
+            }
+            Node0x55cb34ddf460;
+            Node0x55cb34ddf4c0;
+            Node0x55cb34dc6d90;
+            Node0x55cb34dc5920;
+          }
+          Node0x55cb34dc3a30;
+          Node0x55cb34ddf930;
+        }
+}

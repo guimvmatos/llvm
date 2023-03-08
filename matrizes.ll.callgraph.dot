@@ -1,0 +1,13 @@
+digraph "Call graph: matrizes.ll" {
+	label="Call graph: matrizes.ll";
+
+	Node0x55ac93198670 [shape=record,label="{matrix_multiply}"];
+	Node0x55ac931991d0 [shape=record,label="{print_matrix}"];
+	Node0x55ac931991d0 -> Node0x55ac93195f70;
+	Node0x55ac931aa0a0 [shape=record,label="{main}"];
+	Node0x55ac931aa0a0 -> Node0x55ac93198670;
+	Node0x55ac931aa0a0 -> Node0x55ac93195f70;
+	Node0x55ac931aa0a0 -> Node0x55ac931991d0;
+	Node0x55ac93195f70 [shape=record,label="{printf}"];
+	Node0x55ac931aa320 [shape=record,label="{llvm.memcpy.p0i8.p0i8.i64}"];
+}

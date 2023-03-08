@@ -1,0 +1,66 @@
+digraph "Region Graph for 'matrix_multiply' function" {
+	label="Region Graph for 'matrix_multiply' function";
+
+	Node0x55cb34dbca60 [shape=record,label="{%3}"];
+	Node0x55cb34dbca60 -> Node0x55cb34dbcab0;
+	Node0x55cb34dbcab0 [shape=record,label="{%10}"];
+	Node0x55cb34dbcab0 -> Node0x55cb34dc5920;
+	Node0x55cb34dbcab0 -> Node0x55cb34dbccd0;
+	Node0x55cb34dc5920 [shape=record,label="{%13}"];
+	Node0x55cb34dc5920 -> Node0x55cb34dc6d90;
+	Node0x55cb34dc6d90 [shape=record,label="{%14}"];
+	Node0x55cb34dc6d90 -> Node0x55cb34dc4b30;
+	Node0x55cb34dc6d90 -> Node0x55cb34dbc380;
+	Node0x55cb34dc4b30 [shape=record,label="{%17}"];
+	Node0x55cb34dc4b30 -> Node0x55cb34dc5650;
+	Node0x55cb34dc5650 [shape=record,label="{%25}"];
+	Node0x55cb34dc5650 -> Node0x55cb34dc3a30;
+	Node0x55cb34dc5650 -> Node0x55cb34da6dc0;
+	Node0x55cb34dc3a30 [shape=record,label="{%28}"];
+	Node0x55cb34dc3a30 -> Node0x55cb34ddf460;
+	Node0x55cb34ddf460 [shape=record,label="{%55}"];
+	Node0x55cb34ddf460 -> Node0x55cb34dc5650[constraint=false];
+	Node0x55cb34da6dc0 [shape=record,label="{%58}"];
+	Node0x55cb34da6dc0 -> Node0x55cb34ddf4c0;
+	Node0x55cb34ddf4c0 [shape=record,label="{%59}"];
+	Node0x55cb34ddf4c0 -> Node0x55cb34dc6d90[constraint=false];
+	Node0x55cb34dbc380 [shape=record,label="{%62}"];
+	Node0x55cb34dbc380 -> Node0x55cb34ddf930;
+	Node0x55cb34ddf930 [shape=record,label="{%63}"];
+	Node0x55cb34ddf930 -> Node0x55cb34dbcab0[constraint=false];
+	Node0x55cb34dbccd0 [shape=record,label="{%66}"];
+	colorscheme = "paired12"
+        subgraph cluster_0x55cb34dc7960 {
+          label = "";
+          style = filled;
+          color = 1
+          subgraph cluster_0x55cb34dc7600 {
+            label = "";
+            style = filled;
+            color = 3
+            subgraph cluster_0x55cb34dc7740 {
+              label = "";
+              style = filled;
+              color = 5
+              subgraph cluster_0x55cb34dc22a0 {
+                label = "";
+                style = filled;
+                color = 7
+                Node0x55cb34dc5650;
+                Node0x55cb34dc3a30;
+                Node0x55cb34ddf460;
+              }
+              Node0x55cb34dc6d90;
+              Node0x55cb34dc4b30;
+              Node0x55cb34da6dc0;
+              Node0x55cb34ddf4c0;
+            }
+            Node0x55cb34dbcab0;
+            Node0x55cb34dc5920;
+            Node0x55cb34dbc380;
+            Node0x55cb34ddf930;
+          }
+          Node0x55cb34dbca60;
+          Node0x55cb34dbccd0;
+        }
+}
